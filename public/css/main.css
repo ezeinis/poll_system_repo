@@ -1,0 +1,48 @@
+html{
+    font-size: 16px;
+}
+
+#new_poll_btn{
+    margin-top: 7px;
+}
+
+.poll_status_index_page{
+    text-align:right;
+    display: inline-block;
+}
+
+.dropdown{
+    display: inline-block;
+}
+
+.open_poll_duration_info{
+    display: inline-block;
+}
+
+.panel-body-question{
+    margin-bottom: 10px;
+}
+
+.total-submissions-info{
+    text-align: right;
+}
+
+.text-rigt{
+    text-align: right;
+}
+
+#show_results_to_user{
+    margin-left: 10px;
+}
+
+.progress{
+    width:45%;
+}
+
+.hidden{
+    visibility:hidden;
+}
+
+.visible{
+    visibility: visible;
+}
