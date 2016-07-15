@@ -32,3 +32,5 @@ Route::get('/index', 'PagesController@index');
 Route::get('/administrator', 'PagesController@administrator');
 
 Route::get('/administrator/new_poll', 'PagesController@administratorCreatePoll');
+
+Route::get('/answer/submit','AnswerSubmissionsController@saveAnswer');

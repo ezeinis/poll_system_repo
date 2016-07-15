@@ -54,16 +54,8 @@ class PagesController extends Controller
                 }
             }
         }
-        $pollVotedFromUserJS=json_encode($pollVotedFromUser);
-        $pollResultsCanBeSeenByUserJS=json_encode($pollResultsCanBeSeenByUser);
-        $dic=NULL;
-        if(!$polls->isEmpty()){
-            foreach($polls as $poll){
-                $dic[$poll->id]= DB::select( DB::raw("SELECT CAST(answer_submissions.created_at AS DATE) AS date,answer_id,count(*) AS count,`text` AS a_text FROM poll_system_db.answer_submissions,poll_system_db.questions_answers WHERE answer_submissions.poll_id=$poll->id AND questions_answers.id=answer_submissions.answer_id GROUP BY 1,answer_id;"));
-            }
-        }
-        $dic = json_encode($dic);
-        return view('index',compact('polls','pollVotedFromUser','pollResultsCanBeSeenByUser','pollVotedFromUserJS','pollResultsCanBeSeenByUserJS','dic'));
+
+        return view('index',compact('polls','pollVotedFromUser','pollResultsCanBeSeenByUser'));
     }
 
     public function administrator()

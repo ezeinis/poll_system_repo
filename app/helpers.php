@@ -9,7 +9,9 @@ function flash($message,$type)
 
 function calculate_percentage($answers,$poll,$answer_id)
 {
+
     $array = [];
+    if($poll!=0){
     foreach ($answers as $answer) {
         $array[$answer->id] = round(($answer->submissions_counter/$poll),3)*100;
     }
@@ -51,6 +53,7 @@ function calculate_percentage($answers,$poll,$answer_id)
                 $array[$min_key]+=(100-$sum);
             }
         }
+    }
     }
     return $array[$answer_id];
 }
