@@ -26,12 +26,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 <script type="text/javascript">
 
-    $('input[type="radio"]').prop('checked', false);
-    $("a.btn-default").click(function(){
-        $(".poll-bar-results").removeClass('hidden');
-        $(".poll-bar-results").addClass('visible');
-    });
-
+    $('.poll_answers input[type="radio"]').prop('checked', false);
 
     $('.poll_answers').click(function(){
         var answer=$(this).attr('id');

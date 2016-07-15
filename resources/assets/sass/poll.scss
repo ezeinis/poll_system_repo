@@ -5,6 +5,8 @@ $text-color:#333;
 $question-margin:0.8em;
 $success-color:green;
 $danger-color:red;
+$colors : #27ae60,#d35400,#8e44ad,#2c3e50,#f39c12,
+#16a085,#c0392b,#7f8c8d,#2980b9;
 
 #poll_container{
     padding:0.8em;
@@ -71,7 +73,7 @@ $danger-color:red;
             background-color:$header-color;
             color:#fff;
         }
-        &:target{
+        &:active{
             background-color:$header-color;
             color:#fff;
         }
@@ -90,6 +92,12 @@ $danger-color:red;
     span{
         margin-right:5px;
     }
+    @for $i from 0 to length($colors){
+        .dp-answer-color-#{$i}{
+            background-color:nth($colors,$i+1);
+        }
+    }
+
 }
 
 #poll-message{

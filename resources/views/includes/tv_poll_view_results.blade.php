@@ -12,7 +12,7 @@
         <div class="col-sm-9">
             <div class="progress">
                 <?php $per=calculate_percentage($poll->answers,$poll->total_poll_submissions,$answer->id); ?>
-                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuenow="{{$per}}" aria-valuemax="100" style="">
+                <div class="progress-bar dp-answer-color-{{$answer->priority}}" role="progressbar" aria-valuemin="0" aria-valuenow="{{$per}}" aria-valuemax="100" style="">
                 <span>{{$answer->submissions_counter}}</span>
                 </div>
             </div>
