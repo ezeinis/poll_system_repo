@@ -53,18 +53,15 @@
     padding-left: 2px; }
 
 .progress .progress-bar {
-  text-align: right; }
+  text-align: right;
+  min-width: 2em; }
 
 .progress span {
   margin-right: 5px; }
 
-#poll_message {
-  padding: 0;
-  margin-top: 0.4em;
-  font-size: 1.2em; }
-  #poll_message .danger {
-    color: red; }
-  #poll_message .success {
-    color: green; }
+#poll-message {
+  margin-bottom: 0 !important;
+  margin-top: 0.8em;
+  padding: 8px; }
 
 /*# sourceMappingURL=poll.css.map */

@@ -36,17 +36,14 @@
     $('.poll_answers').click(function(){
         var answer=$(this).attr('id');
         var id = answer.split("_")[1];
-        console.log(id);
         $('#input_'+id).prop('checked', true);
         $('.poll_answers').css('background-color', '#d2d2d2');
         $('#answer_'+id).css('background-color', '#b9d7e6');
     });
 
     $('#button_submit_poll').click(function(){
-        //$.post("")
         var answer_id=($('input[name=poll_radio]:checked').val()).split("_")[1];
         var poll_id=($('input[name=poll_radio]:checked').val()).split("_")[0];
-        console.log(answer_id);
         $.get(
             "/answer/submit",
             {'answer_submit':answer_id,'poll_id':poll_id},
@@ -55,6 +52,14 @@
                 $('#replace_container').html(data['view_html']);
             });
         });
+    $( document ).ajaxComplete(function() {
+        console.log("ok");
+        $('.progress-bar').each(function() {
+            var bar_value = $(this).attr('aria-valuenow') + '%';
+            $(this).animate({ width: bar_value }, { duration: 10 });
+        });
+    });
+
 
 
 </script>
