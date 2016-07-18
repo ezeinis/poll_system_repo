@@ -40,7 +40,7 @@ class Poll extends Model
 
     {
 
-        return $this->hasMany(Question_Answers::class)->where('type','a');
+        return $this->hasMany(Question_Answers::class)->where('type','a')->orderBy('priority');
 
     }
 

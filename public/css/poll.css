@@ -26,36 +26,20 @@
 
 .poll_answers {
   background-color: #d2d2d2;
-  margin-top: 0.8em;
-  position: relative; }
-  .poll_answers h4 {
-    color: #333;
-    padding-left: 3em; }
-  .poll_answers label {
-    cursor: pointer;
-    margin-bottom: 0; }
-  .poll_answers input:empty {
+  margin-top: 0.8em; }
+  .poll_answers input {
     display: none; }
-  .poll_answers label:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 3em;
-    text-align: center;
-    font-size: 1em; }
-  .poll_answers input:empty ~ label:before {
-    background: #d2d2d2; }
-  .poll_answers input:checked ~ label:before {
-    content: '\2714';
-    background: #498D5B; }
-  .poll_answers input:empty ~ label:hover:before {
-    background: #498D5B; }
-  .poll_answers input:empty ~ label:hover {
-    background-color: #c2c2c2; }
-  .poll_answers input:checked ~ label:hover:before {
-    background-color: #498D5B; }
+  .poll_answers h4 {
+    color: #333; }
+  .poll_answers label {
+    margin-bottom: 0;
+    cursor: pointer;
+    padding: 7px;
+    transition: background-color 0.5s ease; }
+  .poll_answers:hover {
+    background: #c2c2c2; }
+  .poll_answers input:checked ~ label {
+    background: #D4DDFA; }
 
 .poll_buttons {
   margin-top: 0.8em; }
@@ -68,9 +52,6 @@
       background-color: #3085b0;
       color: #fff; }
     .poll_buttons button:focus {
-      background-color: #3085b0;
-      color: #fff; }
-    .poll_buttons button:active {
       background-color: #3085b0;
       color: #fff; }
   .poll_buttons .col-sm-6 {

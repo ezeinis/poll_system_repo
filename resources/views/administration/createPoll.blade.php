@@ -62,16 +62,17 @@
                         <div class="form-group">
                             <label for="q_text">Answers</label>
                         </div>
-                        <div class="form-group">
-                            1.<input style="display:inline-block" type="text" class="form-control" id="answer_1" name="answer_1" required>
-                        </div>
-                        <div class="form-group">
-                            2.<input style="display:inline-block" type="text" class="form-control" id="answer_2" name="answer_2" required>
-                        </div>
-                        <div class="form-group">
-                            3.<input style="display:inline-block" type="text" class="form-control" id="answer_3" name="answer_3">
-                        </div>
-                        </div>
+                            <ul id="sortable">
+                                <li><div>
+                                    <input style="display:inline-block" type="text" class="form-control" id="answer_1" name="answer_1" required>
+                                </div></li>
+                                <li><div>
+                                    <input style="display:inline-block" type="text" class="form-control" id="answer_2" name="answer_2" required>
+                                </div></li>
+                                <li><div>
+                                    <input style="display:inline-block" type="text" class="form-control" id="answer_3" name="answer_3">
+                                </div></li>
+                            </ul>
                         <div class="form-group">
                             <button id="add_answer_btn" type="button" class="btn btn-primary">Add answer</button>
                         </div>
@@ -118,13 +119,23 @@
 
         var answer_counter=4;
         $("#add_answer_btn").click(function(){
-            $("#1").append("<div class='form-group'>"+answer_counter+".<input style='display:inline-block' type='text' class='form-control' id='answer_"+answer_counter+"' name='answer_"+answer_counter+"'></div>");
+            $("#sortable").append("<li><div><input style='display:inline-block' type='text' class='form-control' id='answer_"+answer_counter+"' name='answer_"+answer_counter+"'></div></li>");
             answer_counter++;
         });
 
         $(function() {
             $( "#datepicker" ).datepicker();
             $('#timepicker').timepicker();
+            $('#sortable').sortable({
+    cancel: ".fixed,input",
+    delay: 100,
+    //connectWith: "",
+    stop: function (event, ui) {
+        //p.HandleSortPareto(ui, ui.item)  // note this just handles the change in order
+    },
+    start: function (event, ui) {}
+});
+
         });
 
 

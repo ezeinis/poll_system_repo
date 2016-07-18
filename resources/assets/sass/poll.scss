@@ -7,9 +7,18 @@ $success-color:green;
 $danger-color:red;
 $colors : #27ae60,#d35400,#8e44ad,#2c3e50,#f39c12,
 #16a085,#c0392b,#7f8c8d,#2980b9;
-$custom-radio-width:3em;
-$green:#498D5B;
-$green-hover:#498D5B;
+$custom-radio-width:4em;
+$green:#c2c2c2;
+$green-hover:#c2c2c2;
+$box-shadow:3px;
+
+@mixin transition($transition) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
 
 #poll_container{
     padding:0.8em;
@@ -50,54 +59,29 @@ $green-hover:#498D5B;
 .poll_answers{
     background-color:$question-color;
     margin-top:$question-margin;
-    position:relative;
 
-    h4{
-        color:$text-color;
-        padding-left:$custom-radio-width;
-    }
-
-    label{
-        cursor:pointer;
-        margin-bottom:0;
-    }
-
-    input:empty{
+    input{
         display:none;
     }
 
-    label:before{
-        content:"";
-        position:absolute;
-        top:0;
-        bottom:0;
-        left:0;
-        width:$custom-radio-width;
-        text-align:center;
-        font-size:1em;
+    h4{
+        color:$text-color;
     }
 
-    input:empty~label:before{
-        background:$question-color;
+    label{
+        margin-bottom:0;
+        cursor:pointer;
+        padding:7px;
+        @include transition(background-color 0.5s ease);
     }
 
-    input:checked~label:before{
-        content: '\2714';
-        background:$green;
+    &:hover{
+        background:$question-color-hover;
     }
 
-    input:empty~label:hover:before{
-        background:$green-hover;
+    input:checked~label{
+        background:#D4DDFA;
     }
-
-    input:empty~label:hover{
-        background-color:$question-color-hover;
-    }
-
-    input:checked~label:hover:before{
-        background-color:$green;
-    }
-
 }
 
 .poll_buttons{
@@ -112,10 +96,6 @@ $green-hover:#498D5B;
             color:#fff;
         }
         &:focus{
-            background-color:$header-color;
-            color:#fff;
-        }
-        &:active{
             background-color:$header-color;
             color:#fff;
         }

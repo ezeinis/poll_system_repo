@@ -32,10 +32,7 @@
 </ul>
 </li>
 </ul>
-
-
 </div>
-
 </div>
 </nav>
 @stop
@@ -65,43 +62,43 @@
                         <div class="form-group">
                             <label for="q_text">Answers</label>
                         </div>
-                        <div class="row">
-                            <div class="col-md-1">
-                            1.
-                            </div>
-                            <div class="form-group col-md-9">
+                        <ul id="sortable">
+                            <li>
+                            <div class="row">
+                            <div class="form-group col-md-10">
                                 <input style="display:inline-block" type="text" class="form-control" id="answer_1" name="answers[{{$poll->answers[0]->id}}]" value="{!! $poll->answers[0]->text !!}" required>
                             </div>
                             <div class="col-md-2">
                             <a class="btn btn-danger" href="/question/{{$poll->question->id}}/answer/{{$poll->answers[0]->id}}/delete">Delete</a>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-1">
-                            2.
                             </div>
-                            <div class="form-group col-md-9">
+                            </li>
+                            <li>
+                            <div class="row">
+                            <div class="form-group col-md-10">
                                 <input style="display:inline-block" type="text" class="form-control" id="answer_2" name="answers[{{$poll->answers[1]->id}}]" value="{!! $poll->answers[1]->text !!}" required>
                             </div>
                             <div class="col-md-2">
                             <a class="btn btn-danger" href="/question/{{$poll->question->id}}/answer/{{$poll->answers[1]->id}}/delete">Delete</a>
                             </div>
-                        </div>
+                            </div>
+                            </li>
+
                         @if($no_answers>2)
                             @for ($i=3;$i<=$no_answers;$i++)
+                            <li>
                             <div class="row">
-                            <div class="col-md-1">
-                            {{$i}}.
-                            </div>
-                            <div class="form-group col-md-9">
+                            <div class="form-group col-md-10">
                                 <input style="display:inline-block" type="text" class="form-control" id="answer_{{$i}}" name="answers[{{$poll->answers[$i-1]->id}}]" value="{!! $poll->answers[$i-1]->text !!}">
                             </div>
                             <div class="col-md-2">
                             <a class="btn btn-danger" href="/question/{{$poll->question->id}}/answer/{{$poll->answers[$i-1]->id}}/delete">Delete</a>
                             </div>
                             </div>
+                            </li>
                             @endfor
                         @endif
+                        </ul>
                         </div>
                         <div class="form-group">
                             <button id="add_answer_btn" type="button" class="btn btn-primary">Add answer</button>
@@ -159,13 +156,14 @@
 
         var answer_counter={{$no_answers+1}};
         $("#add_answer_btn").click(function(){
-            $("#1").append("<div class='form-group'>"+answer_counter+".<input style='display:inline-block' type='text' class='form-control' id='answer_"+answer_counter+"' name='answers_extra["+answer_counter+"]'></div>");
+            $("#sortable").append("<li><div class='row'><div class='form-group col-md-12'><input style='display:inline-block' type='text' class='form-control' id='answer_"+answer_counter+"' name='answers[]'></div></div></li>");
             answer_counter++;
         });
 
         $(function() {
             $( "#datepicker" ).datepicker();
             $('#timepicker').timepicker();
+            $( "#sortable" ).sortable();
         });
 
 

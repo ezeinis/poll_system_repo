@@ -100,24 +100,36 @@ class PollsController extends Controller
         // $question_to_update->q_text=$request->q_text;
         $question_to_update->save();
         //update answers
-        foreach(array_keys($request->answers) as $key){
-            $answer_to_update = Question_Answers::find($key);
-            $answer_to_update->text = $request->answers[$key];
-            $answer_to_update->save();
-        }
-        if($request->has('answers_extra')){
-            foreach(array_keys($request->answers_extra) as $key){
+        //dd($request->toArray());
+        foreach(array_keys($request->answers) as $key => $value){
+            $answer_to_update = Question_Answers::find($value);
+            if($answer_to_update===NULL){
                 $answer_to_create = new Question_Answers;
-                //return $request->answers_extra[$key];
                 $answer_to_create->poll_id=$poll_to_update->id;
                 $answer_to_create->parent=$question_to_update->id;
-                $answer_to_create->text=$request->answers_extra[$key];
+                $answer_to_create->text=$request->answers[$value];
                 $answer_to_create->type='a';
-                $answer_to_create->priority=$key-1;
+                $answer_to_create->priority=$key;
                 $answer_to_create->save();
+            }else{
+                $answer_to_update->text = $request->answers[$value];
+                $answer_to_update->priority=$key;
+                $answer_to_update->save();
             }
-            //return array_keys($request->answers_extra);
         }
+        // if($request->has('answers_extra')){
+        //     foreach(array_keys($request->answers_extra) as $key){
+        //         $answer_to_create = new Question_Answers;
+        //         //return $request->answers_extra[$key];
+        //         $answer_to_create->poll_id=$poll_to_update->id;
+        //         $answer_to_create->parent=$question_to_update->id;
+        //         $answer_to_create->text=$request->answers_extra[$key];
+        //         $answer_to_create->type='a';
+        //         $answer_to_create->priority=$key-1;
+        //         $answer_to_create->save();
+        //     }
+        //     //return array_keys($request->answers_extra);
+        // }
         flash('Poll updated','success');
         return redirect('/administrator');
     }
