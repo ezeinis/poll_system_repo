@@ -29,7 +29,7 @@ class AnswerSubmissionsController extends Controller
         $poll=Poll::find($request->poll_id);
         if($this->userAlreadySubmitedPoll($request->poll_id)){
             $type="danger";
-            $poll_message="Δεν μπορείται να ψηφίσετε πάλι στο ίδιο poll!";
+            $poll_message="Δεν μπορείτε να ψηφίσετε πάλι στο ίδιο poll!";
             return ['view_html'=>view('includes.tv_poll_view_results',compact('poll','poll_message','type'))->render()];
         }else{
             $answer_submission->save();

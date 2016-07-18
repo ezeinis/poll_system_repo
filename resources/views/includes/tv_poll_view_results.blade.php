@@ -2,7 +2,7 @@
     @if($poll->total_poll_submissions!=0)
     @foreach($poll->answers as $answer)
 
-    <div id="answer_{{$answer->id}}" class="row poll_answers">
+    <div id="answer_{{$answer->id}}" class="row poll_answers_results">
         <div class="row">
         <div class="col-sm-12">
             <h4>{{$answer->text}}</h4>

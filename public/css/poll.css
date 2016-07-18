@@ -18,19 +18,44 @@
     line-height: 1.4em;
     font-weight: 550; }
 
-.poll_answers {
+.poll_answers_results {
   background-color: #d2d2d2;
   margin-top: 0.8em; }
-  .poll_answers input {
-    text-align: center; }
+  .poll_answers_results h4 {
+    color: #333; }
+
+.poll_answers {
+  background-color: #d2d2d2;
+  margin-top: 0.8em;
+  position: relative; }
   .poll_answers h4 {
     color: #333;
-    margin: 0;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em; }
-  .poll_answers:hover {
-    background-color: #c2c2c2;
-    cursor: pointer; }
+    padding-left: 3em; }
+  .poll_answers label {
+    cursor: pointer;
+    margin-bottom: 0; }
+  .poll_answers input:empty {
+    display: none; }
+  .poll_answers label:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3em;
+    text-align: center;
+    font-size: 1em; }
+  .poll_answers input:empty ~ label:before {
+    background: #d2d2d2; }
+  .poll_answers input:checked ~ label:before {
+    content: '\2714';
+    background: #498D5B; }
+  .poll_answers input:empty ~ label:hover:before {
+    background: #498D5B; }
+  .poll_answers input:empty ~ label:hover {
+    background-color: #c2c2c2; }
+  .poll_answers input:checked ~ label:hover:before {
+    background-color: #498D5B; }
 
 .poll_buttons {
   margin-top: 0.8em; }
@@ -90,5 +115,14 @@
   margin-bottom: 0 !important;
   margin-top: 0.8em;
   padding: 8px; }
+
+input ~ label::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2em;
+  background: #000; }
 
 /*# sourceMappingURL=poll.css.map */

@@ -7,19 +7,15 @@
     </div>
     <div id="replace_container">
         <div class="row">
-            @foreach($poll->answers as $answer)
-            <div id="answer_{{$answer->id}}" class="row poll_answers">
-                <div class="col-sm-2">
-                    <input id="input_{{$answer->id}}" type="radio" name="poll_radio" value="{{$poll->id}}_{{$answer->id}}">
-                </div>
-                <div class="col-sm-10">
-                    <h4>{{$answer->text}}</h4>
-                </div>
+         @foreach($poll->answers as $answer)
+            <div class="poll_answers">
+                <input type="radio" name="poll_radio" id="answer_{{$answer->id}}" value="{{$poll->id}}_{{$answer->id}}"/>
+                <label for="answer_{{$answer->id}}"><h4>{{$answer->text}}</h4></label>
             </div>
-            @endforeach
+        @endforeach
         </div>
         <div class="row poll_buttons">
-            <button id="button_submit_poll" type="submit" class="btn btn-default col-sm-12">Ψήφισε</button>
+            <button id="button_submit_poll" type="submit" class="btn btn-default col-xs-12">Ψήφισε</button>
         </div>
     </div>
 @endforeach

@@ -28,14 +28,6 @@
 
     $('.poll_answers input[type="radio"]').prop('checked', false);
 
-    $('.poll_answers').click(function(){
-        var answer=$(this).attr('id');
-        var id = answer.split("_")[1];
-        $('#input_'+id).prop('checked', true);
-        $('.poll_answers').css('background-color', '#d2d2d2');
-        $('#answer_'+id).css('background-color', '#b9d7e6');
-    });
-
     $('#button_submit_poll').click(function(){
         var answer_id=($('input[name=poll_radio]:checked').val()).split("_")[1];
         var poll_id=($('input[name=poll_radio]:checked').val()).split("_")[0];
