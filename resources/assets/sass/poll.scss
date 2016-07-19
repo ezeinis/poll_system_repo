@@ -1,7 +1,7 @@
-$header-color:#3085b0;
+$header-color:#324651;
 $question-color:#d2d2d2;
 $question-color-hover:#c2c2c2;
-$text-color:#333;
+$text-color:#555;
 $question-margin:0.8em;
 $success-color:green;
 $danger-color:red;
@@ -35,6 +35,7 @@ $box-shadow:3px;
             margin:0;
             padding-top:0.6em!important;
             padding-bottom:0.6em!important;
+            font-weight:590;
         }
     }
 
@@ -43,7 +44,6 @@ $box-shadow:3px;
         text-align:left;
         letter-spacing: 2px;
         line-height: 1.4em;
-        font-weight: 550;
     }
 
 }
@@ -58,8 +58,8 @@ $box-shadow:3px;
 
 .poll_answers{
     background-color:$question-color;
-    margin-top:$question-margin;
 
+    margin-top:$question-margin;
     input{
         display:none;
     }
@@ -72,7 +72,6 @@ $box-shadow:3px;
         margin-bottom:0;
         cursor:pointer;
         padding:7px;
-        @include transition(background-color 0.5s ease);
     }
 
     &:hover{
@@ -80,8 +79,13 @@ $box-shadow:3px;
     }
 
     input:checked~label{
-        background:#D4DDFA;
+        background: #3085b0;
+        h4{
+        color: #fff;
+        }
+
     }
+
 }
 
 .poll_buttons{
@@ -91,6 +95,7 @@ $box-shadow:3px;
         border-radius:0;
         color:#fff;
         font-size:1.2em;
+        font-weight:590;
         &:hover{
             background-color:$header-color;
             color:#fff;

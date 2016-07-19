@@ -6,23 +6,23 @@
 .row {
   margin: 0; }
   .row .poll_header {
-    background-color: #3085b0; }
+    background-color: #324651; }
     .row .poll_header h4 {
       margin: 0;
       padding-top: 0.6em !important;
-      padding-bottom: 0.6em !important; }
+      padding-bottom: 0.6em !important;
+      font-weight: 590; }
   .row h4 {
     color: #fff;
     text-align: left;
     letter-spacing: 2px;
-    line-height: 1.4em;
-    font-weight: 550; }
+    line-height: 1.4em; }
 
 .poll_answers_results {
   background-color: #d2d2d2;
   margin-top: 0.8em; }
   .poll_answers_results h4 {
-    color: #333; }
+    color: #555; }
 
 .poll_answers {
   background-color: #d2d2d2;
@@ -30,29 +30,31 @@
   .poll_answers input {
     display: none; }
   .poll_answers h4 {
-    color: #333; }
+    color: #555; }
   .poll_answers label {
     margin-bottom: 0;
     cursor: pointer;
-    padding: 7px;
-    transition: background-color 0.5s ease; }
+    padding: 7px; }
   .poll_answers:hover {
     background: #c2c2c2; }
   .poll_answers input:checked ~ label {
-    background: #D4DDFA; }
+    background: #3085b0; }
+    .poll_answers input:checked ~ label h4 {
+      color: #fff; }
 
 .poll_buttons {
   margin-top: 0.8em; }
   .poll_buttons button {
-    background-color: #3085b0;
+    background-color: #324651;
     border-radius: 0;
     color: #fff;
-    font-size: 1.2em; }
+    font-size: 1.2em;
+    font-weight: 590; }
     .poll_buttons button:hover {
-      background-color: #3085b0;
+      background-color: #324651;
       color: #fff; }
     .poll_buttons button:focus {
-      background-color: #3085b0;
+      background-color: #324651;
       color: #fff; }
   .poll_buttons .col-sm-6 {
     padding-right: 2px;
