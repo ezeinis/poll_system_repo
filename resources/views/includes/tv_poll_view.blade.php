@@ -15,7 +15,12 @@
         @endforeach
         </div>
         <div class="row poll_buttons">
+            @if(Cookie::get('poll_ids')==NULL)
             <button id="button_submit_poll" type="submit" class="btn btn-default col-xs-12">Ψήφισε</button>
+            @else
+            <div class="col-xs-6"><button id="button_submit_poll" type="submit" class="btn btn-default col-xs-12">Ψήφισε</button></div>
+            <div class="col-xs-6"><button id="button_see_results_{{$poll->id}}" type="submit" class="btn btn-default col-xs-12 button_see_results">Αποτελέσματα</button></div>
+            @endif
         </div>
     </div>
 @endforeach

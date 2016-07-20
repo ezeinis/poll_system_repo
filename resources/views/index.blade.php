@@ -24,32 +24,7 @@
 @section('js')
 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-<script type="text/javascript">
+<script src="js/poll.js"></script>
 
-    $('.poll_answers input[type="radio"]').prop('checked', false);
-
-    $('#button_submit_poll').click(function(){
-        var answer_id=($('input[name=poll_radio]:checked').val()).split("_")[1];
-        var poll_id=($('input[name=poll_radio]:checked').val()).split("_")[0];
-        $.get(
-            "/answer/submit",
-            {'answer_submit':answer_id,'poll_id':poll_id},
-            function( data ) {
-                //alert(data['view_html']);
-                $('#replace_container').html(data['view_html']);
-            });
-        });
-    $( document ).ajaxComplete(function() {
-        console.log("ok");
-        $('.progress-bar').each(function() {
-            var bar_value = $(this).attr('aria-valuenow') + '%';
-            $(this).animate({ width: bar_value }, { duration: 10 });
-        });
-    });
-
-
-
-</script>
 @stop
-<!-- SELECT CAST(poll_submissions.created_at AS DATE),answer_id,a_text,count(*) FROM poll_system_db.poll_submissions,poll_system_db.answers WHERE poll_id=8 AND answers.id=answer_id GROUP BY 1,answer_id; -->
-<!-- SELECT CAST(answer_submissions.created_at AS DATE) FROM poll_system_db.answer_submissions GROUP BY 1; -->
+

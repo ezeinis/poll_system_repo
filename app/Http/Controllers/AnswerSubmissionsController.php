@@ -51,6 +51,14 @@ class AnswerSubmissionsController extends Controller
         return ['view_html'=>view('includes.tv_poll_view_results',compact('poll','poll_message','type'))->render()];
     }
 
+    public function showPollResults(Request $request)
+    {
+        $poll=Poll::find($request->poll_id);
+        $type="warning";
+        $poll_message="Έχετε ήδη ψηφίσει σε αυτό το poll!";
+        return ['view_html'=>view('includes.tv_poll_view_results',compact('poll','poll_message','type'))->render()];
+    }
+
     protected function userAlreadySubmitedPoll($poll_id)
     {
         $polls=Cookie::get('poll_ids');

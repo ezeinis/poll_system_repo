@@ -1,6 +1,6 @@
-$header-color:#324651;
-$question-color:#d2d2d2;
-$question-color-hover:#c2c2c2;
+$header-color:#2e2e2e;
+$question-color:#e9e7e7;
+$question-color-hover:#cccccc;
 $text-color:#555;
 $question-margin:0.8em;
 $success-color:green;
@@ -11,14 +11,8 @@ $custom-radio-width:4em;
 $green:#c2c2c2;
 $green-hover:#c2c2c2;
 $box-shadow:3px;
-
-@mixin transition($transition) {
-    -moz-transition:    $transition;
-    -o-transition:      $transition;
-    -webkit-transition: $transition;
-    transition:         $transition;
-}
-
+$button-color:#58b54f;
+$answer-color:#D4DDFA;
 
 #poll_container{
     padding:0.8em;
@@ -66,6 +60,7 @@ $box-shadow:3px;
 
     h4{
         color:$text-color;
+        padding-left:18px;
     }
 
     label{
@@ -79,9 +74,9 @@ $box-shadow:3px;
     }
 
     input:checked~label{
-        background: #3085b0;
+        background: $answer-color;
         h4{
-        color: #fff;
+
         }
 
     }
@@ -91,21 +86,22 @@ $box-shadow:3px;
 .poll_buttons{
     margin-top:$question-margin;
     button{
-        background-color:$header-color;
+        background-color:$button-color;
         border-radius:0;
         color:#fff;
         font-size:1.2em;
         font-weight:590;
         &:hover{
-            background-color:$header-color;
+            background-color:$button-color;
             color:#fff;
         }
         &:focus{
-            background-color:$header-color;
+            background-color:$button-color;
             color:#fff;
         }
     }
-    .col-sm-6{
+
+    .col-xs-6{
         padding-right:2px;
         padding-left:2px;
     }
