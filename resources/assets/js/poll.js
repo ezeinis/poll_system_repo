@@ -9,7 +9,7 @@
             {'answer_submit':answer_id,'poll_id':poll_id},
             function( data ) {
                 //alert(data['view_html']);
-                $('#replace_container').html(data['view_html']);
+                $('#answers_buttons_container').html(data['view_html']);
             });
     });
     $('.button_see_results').click(function(){
@@ -19,7 +19,7 @@
             {'poll_id':poll_id},
             function( data ) {
                 //alert(data['view_html']);
-                $('#replace_container').html(data['view_html']);
+                $('#answers_buttons_container').html(data['view_html']);
             });
     });
     $( document ).ajaxComplete(function() {

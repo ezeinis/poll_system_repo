@@ -5,7 +5,7 @@
             <h4>{{$poll->question->text}}</h4>
         </div>
     </div>
-    <div id="replace_container">
+    <div id="answers_buttons_container">
         <div class="row">
          @foreach($poll->answers as $answer)
             <div class="poll_answers">

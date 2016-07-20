@@ -24,5 +24,5 @@
     </div>
     @endforeach
     </div>
-        <div id="poll-message" class="alert alert-{{$type}}"> {{$poll_message}}</div>
+    <div id="poll-message" class="alert alert-{{$type}}"> {{$poll_message}}</div>
     @endif

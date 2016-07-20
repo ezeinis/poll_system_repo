@@ -18,124 +18,113 @@ $answer-color:#D4DDFA;
     padding:0.8em;
     border:1px solid #ddd;
     width:100%;
-}
 
-.row{
-    margin:0;
+    .row{
+        margin:0;
+    }
+
+    h4{
+        margin:0;
+        padding-top:0.6em!important;
+        padding-bottom:0.6em!important;
+        font-weight:590;
+        letter-spacing: 2px;
+        text-align:left;
+        line-height: 1.4em;
+    }
 
     .poll_header{
         background-color:$header-color;
         h4{
-            margin:0;
-            padding-top:0.6em!important;
-            padding-bottom:0.6em!important;
-            font-weight:590;
-        }
-    }
-
-    h4{
-        color:#fff;
-        text-align:left;
-        letter-spacing: 2px;
-        line-height: 1.4em;
-    }
-
-}
-
-.poll_answers_results{
-    background-color:$question-color;
-    margin-top:$question-margin;
-    h4{
-        color:$text-color;
-    }
-}
-
-.poll_answers{
-    background-color:$question-color;
-
-    margin-top:$question-margin;
-    input{
-        display:none;
-    }
-
-    h4{
-        color:$text-color;
-        padding-left:18px;
-    }
-
-    label{
-        margin-bottom:0;
-        cursor:pointer;
-        padding:7px;
-    }
-
-    &:hover{
-        background:$question-color-hover;
-    }
-
-    input:checked~label{
-        background: $answer-color;
-        h4{
-
-        }
-
-    }
-
-}
-
-.poll_buttons{
-    margin-top:$question-margin;
-    button{
-        background-color:$button-color;
-        border-radius:0;
-        color:#fff;
-        font-size:1.2em;
-        font-weight:590;
-        &:hover{
-            background-color:$button-color;
-            color:#fff;
-        }
-        &:focus{
-            background-color:$button-color;
             color:#fff;
         }
     }
 
-    .col-xs-6{
-        padding-right:2px;
-        padding-left:2px;
-    }
-}
+    #answers_buttons_container{
+        .poll_answers{
+            margin-top:$question-margin;
+            h4{
+                color:$text-color;
+                padding-left:18px;
+            }
 
-.progress{
-    .progress-bar{
-        text-align:right;
-        min-width:2em;
-    }
-    span{
-        margin-right:5px;
-    }
-    @for $i from 0 to length($colors){
-        .dp-answer-color-#{$i}{
-            background-color:nth($colors,$i+1);
+            input{
+                display:none;
+                &:checked~label{
+                    background: $answer-color;
+                }
+            }
+
+            label{
+                margin-bottom:0;
+                cursor:pointer;
+                padding:7px;
+                background:$question-color;
+                &:hover{
+                    background:$question-color-hover;
+                }
+            }
+
+        }
+
+        .poll_answers_results{
+            margin-top:$question-margin;
+            background-color:$question-color;
+            h4{
+                color:$text-color;
+            }
+            .progress{
+                .progress-bar{
+                    text-align:right;
+                    min-width:2em;
+                }
+                span{
+                    margin-right:5px;
+                }
+                @for $i from 0 to length($colors){
+                    .dp-answer-color-#{$i}{
+                        background-color:nth($colors,$i+1);
+                    }
+                }
+
+            }
+        }
+
+        .poll_buttons{
+            margin-top:$question-margin;
+            button{
+                background-color:$button-color;
+                border-radius:0;
+                color:#fff;
+                font-size:1.2em;
+                font-weight:590;
+                &:hover{
+                    background-color:$button-color;
+                    color:#fff;
+                }
+                &:focus{
+                    background-color:$button-color;
+                    color:#fff;
+                }
+            }
+
+            .col-xs-6{
+                padding-right:2px;
+                padding-left:2px;
+            }
         }
     }
 
-}
-
-#poll-message{
+    #poll-message{
         margin-bottom:0!important;
         margin-top:$question-margin;
         padding:8px;
+    }
 }
 
-input~label::before{
-            display:block;
-            position:absolute;
-            top:0;
-            bottom:0;
-            left:0;
-            width:2em;
-            background:#000;
-    }
+
+
+
+
+
 

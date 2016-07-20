@@ -7,7 +7,7 @@ html{
     display: inline-block;
 }
 
-.dropdown{
+.poll_status_dropdown{
     display: inline-block;
 }
 
@@ -23,18 +23,19 @@ html{
     text-align: right;
 }
 
-.text-rigt{
+/*.text-rigt{
     text-align: right;
-}
+}*/
 
 #show_results_to_user{
     margin-left: 10px;
 }
 
-.hidden{
+/*.hidden{
     visibility:hidden;
 }
 
 .visible{
     visibility: visible;
 }
+*/

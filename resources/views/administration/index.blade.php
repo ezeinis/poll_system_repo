@@ -50,7 +50,7 @@
                         <h4>{{$poll->title}}</h4>
                         </div>
                         <div class="poll_status_index_page col-md-6 col-md-offset-2">
-                            <div class="dropdown">
+                            <div class="poll_status_dropdown dropdown">
                                 @if($poll->is_open==1)
                                 <button class="btn btn-success dropdown-toggle" type="button" id="about-us" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Open
